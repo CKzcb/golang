@@ -2,17 +2,22 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"log"
 	"net"
+	"time"
 )
 
 func main() {
-	conn, err := net.Dial("tcp", "127.0.0.1:5454")
+	var name string
+	flag.StringVar(&name, "name", "陌生人", "姓名")
+	conn, err := net.Dial("tcp", "47.233.27.128:5454")
 	if err != nil {
 		log.Fatal("err conn ..")
 	}
 	log.Println("start connecting ... ")
+	log.Println("你好啊~ ", name)
 	go clientRead(conn)
 	var input string
 	for {
@@ -34,7 +39,7 @@ func clientRead(conn net.Conn) {
 			log.Println("read err ...")
 		} else {
 			if n > 0 {
-				fmt.Println("other say:", string(p[:n]))
+				fmt.Println(time.Now().Format("%T-%m-%d %H:%M:%S"), ":", string(p[:n]))
 			}
 		}
 
