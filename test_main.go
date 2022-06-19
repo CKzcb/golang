@@ -1,13 +1,17 @@
-package main
+// package main
 
-import (
-	"fmt"
+// import (
+// 	"fmt"
+// 	t "golang/demo"
+// )
 
-	t "./tpackage"
-)
+// func main() {
 
-func main() {
+// 	s := t.NewStudent("aa", 20)
+// 	fmt.Printf("s.GetName(): %v\n", s.GetName())
+// }
 
-	s := t.NewStudent("aa", 20)
-	fmt.Printf("s.GetName(): %v\n", s.GetName())
-}
+// func init() {
+// 	var c = "ddd"
+// 	fmt.Printf("c: %v\n", c)
+// }

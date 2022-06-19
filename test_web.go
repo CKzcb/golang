@@ -1,7 +1,7 @@
 // package main
 
 // import (
-// 	"fmt"
+// 	"io/ioutil"
 // 	"log"
 // 	"net/http"
 // )
@@ -13,6 +13,6 @@
 // }
 
 // func index(w http.ResponseWriter, r *http.Request) {
-// 	log.Println(r)
-// 	fmt.Fprintf(w, "hi~")
+// 	content, _ := ioutil.ReadFile("./index.html")
+// 	w.Write(content)
 // }
